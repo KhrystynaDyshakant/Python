@@ -1,30 +1,28 @@
-from models.Hotel import Hotel
-from models.ResortHotel import ResortHotel
-from models.Motel import Motel
-from models.LuxuryHotel import LuxuryHotel
-from models.EcoHotel import EcoHotel
-
+"""
+HotelManager class
+"""
 class HotelManager:
-    
+    """
+    HotelManager class
+    """
     def __init__(self):
         """
         Initialize a HotelManager object.
 
         Initialixes an emty list of hotels.
         """
-
         self.hotels = []
 
     def add_hotel(self, hotel):
-         """
-         Add a hotel to the manager.
+        """
+        Add a hotel to the manager.
 
-         Args:
+        Args:
            hotel(Hotel):The hotel to be added.
-         """
-         self.hotels.append(hotel)
-         
+        """
+        self.hotels.append(hotel)
 
+# pylint: disable=line-too-long
     def find_hotel_with_available_rooms(self, available_rooms):
         """
         Find hotels with available rooms.
@@ -35,20 +33,19 @@ class HotelManager:
         Returns:
             list:A list of hotels with available rooms.
         """
-            
-        filtered_hotels = list(filter(lambda hotel:hotel.available_rooms==available_rooms, self.hotels))
+        filtered_hotels = list(filter(lambda hotel: hotel.available_rooms == available_rooms, self.hotels))
+
         return filtered_hotels
 
     def find_hotel_with_rating_more_than(self, rating):
-         """
-         Find hotels with more rating.
+        """
+        Find hotels with more rating.
 
-         Args:
+        Args:
            rating(int):The rating to filter hotels.
 
-         Returns:
+        Returns:
            list:A list of hotels with more rating.
-         """
-         filtered_hotels = list(filter(lambda hotel:hotel.rating>rating, self.hotels))
-         return filtered_hotels
-          
+        """
+        filtered_hotels = list(filter(lambda hotel:hotel.rating>rating, self.hotels))
+        return filtered_hotels
