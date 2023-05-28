@@ -44,6 +44,6 @@ class ResortHotel(Hotel):
         """
         Return the name of the hotel.
         Return:
-        str:The remaining name of the hotel.
+              str:The remaining name of the hotel.
         """
-        return self.name()
+        return self.name
