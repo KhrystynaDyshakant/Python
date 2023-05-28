@@ -1,6 +1,6 @@
 # pylint: disable=too-many-instance-attributes
 """
-A class inheriting from the Hotel class.
+A class inheriting from the Hotel  class.
 """
 from models.hotel import Hotel
 class LuxuryHotel(Hotel):

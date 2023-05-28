@@ -74,14 +74,14 @@ class Hotel(ABC):
     def get_attributes_by_value_type(self, value_type):
         """
         Return a dictionary of attributes and their values that match the
-        specified value type
+        specified value type.
 
         Args:
-        value_type(type): The type of value to match
+        value_type(type): The type of value to match.
 
         Returns:
         dict: A dictionary of attributes and their values that have the
-        specified value type
+        specified value type.
         """
         return {attr: value for attr, value in self.__dict__.items()
                 if isinstance(value, value_type)}

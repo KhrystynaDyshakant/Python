@@ -1,5 +1,5 @@
 """
-main
+main.
 """
 from managers.hotel_manager import HotelManager
 from models.resort_hotel import ResortHotel
@@ -8,7 +8,7 @@ from models.luxury_hotel import LuxuryHotel
 from models.eco_hotel import EcoHotel
 
 manager = HotelManager()
-manager.add_hotel(ResortHotel("Grand", 4, 2, 3, 4, 8, 1))
+manager.add_hotel(ResortHotel("Grand", 5, 2, 3, 5, 8, 1))
 manager.add_hotel(Motel("Tracl", 1, 2, 4, 17, 210, "Lviv", "Sokal",
                         "Lviv-Sokal"))
 manager.add_hotel(LuxuryHotel("Lion", 5, 14, 1, 4, 1))
@@ -70,7 +70,7 @@ print(attributes)
 
 # Перевірка умови за допомогою функцій all() та any()
 all_condition = all(hotel.available_rooms > 0 for hotel in manager)
-any_condition = any(hotel.rating > 4 for hotel in manager)
+any_condition = any(hotel.rating > 3 for hotel in manager)
 
 print(f"All condition: {all_condition}")
 print(f"Any condition: {any_condition}")

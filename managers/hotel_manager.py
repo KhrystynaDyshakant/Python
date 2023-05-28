@@ -1,5 +1,5 @@
 """
-HotelManager class
+HotelManager class.
 """
 class HotelManager:
     """
