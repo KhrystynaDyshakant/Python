@@ -21,7 +21,7 @@ class Hotel(ABC):
         self.total_rooms = total_rooms
         self.available_rooms = available_rooms
         self.rating = rating
-        
+
     def __str__(self):
         return f"""Name:{self.name}, Total Rooms: {self.total_rooms},
         Available Rooms: {self.available_rooms}, Rating: {self.rating}"""
@@ -71,3 +71,17 @@ class Hotel(ABC):
         str:The remaining name of track.
         int:The remaining kilometer of track.
         """
+    def get_attributes_by_value_type(self, value_type):
+        """
+        Return a dictionary of attributes and their values that match the
+        specified value type.
+
+        Args:
+        value_type(type): The type of value to match.
+
+        Returns:
+        dict: A dictionary of attributes and their values that have the
+        specified value type.
+        """
+        return {attr: value for attr, value in self.__dict__.items()
+                if isinstance(value, value_type)}

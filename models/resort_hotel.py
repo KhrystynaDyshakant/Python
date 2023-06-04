@@ -1,6 +1,6 @@
 # pylint: disable=too-many-instance-attributes
 """
-A class inheriting from the Hotel class
+A class inheriting from the Hotel class.
 """
 from models.hotel import Hotel
 class ResortHotel(Hotel):
@@ -44,6 +44,6 @@ class ResortHotel(Hotel):
         """
         Return the name of the hotel.
         Return:
-        str:The remaining name of the hotel.
+              str:The remaining name of the hotel.
         """
-        return self.name()
+        return self.name

@@ -1,6 +1,6 @@
 # pylint: disable=too-many-instance-attributes
 """
-A class inheriting from the Hotel class
+A class inheriting from the Hotel class.
 """
 from models.hotel import Hotel
 class Motel(Hotel):
@@ -54,4 +54,4 @@ class Motel(Hotel):
          str:The remaining name of track.
          int:The remaining kilometer of track.
         """
-        return self.name_of_track() + self.kilometer_of_track()
+        return self.name_of_track
