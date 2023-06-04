@@ -1,7 +1,9 @@
 # pylint: disable=too-many-instance-attributes
 """
 A class inheriting from the Hotel  class.
-"""
+"""# pylint: disable=C0303
+from decorators.decorator import logged
+from exceptions.rating_exceptions import RatingException
 from models.hotel import Hotel
 class LuxuryHotel(Hotel):
     """
@@ -38,3 +40,18 @@ A class inheriting from the Hotel class.
         This method should be implemented by the concrete hotel classes.
         """
         return None # pylint: disable=C0303
+
+    @logged(RatingException, mode="file")
+    def rate(self, rating):
+        """
+        Rate the hotel and update the overall rating.
+
+        Args:
+            rating (float): The rating given to the hotel.
+
+        Raises:
+            RatingException: If the rating is not between 1 and 10.
+        """
+        if rating < 1 or rating > 5:
+            raise RatingException
+        self.rating += rating

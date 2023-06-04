@@ -6,6 +6,7 @@ from models.resort_hotel import ResortHotel
 from models.motel import Motel
 from models.luxury_hotel import LuxuryHotel
 from models.eco_hotel import EcoHotel
+from exceptions.rating_exceptions import RatingException
 
 manager = HotelManager()
 manager.add_hotel(ResortHotel("Grand", 5, 2, 3, 5, 8, 1))
@@ -63,7 +64,6 @@ for result in zip_results:
 print("\n")
 
 # Повертає словник з усіма ключами та значеннями атрибутів обʼєкта
-hotel = ResortHotel("Grand", 4, 2, 3, 4, 8, 1)
 attributes = hotel.get_attributes_by_value_type(str)
 print("\nList of attributes by value type str:")
 print(attributes)
@@ -74,3 +74,10 @@ any_condition = any(hotel.rating > 3 for hotel in manager)
 
 print(f"All condition: {all_condition}")
 print(f"Any condition: {any_condition}")
+
+print("\n")
+hotel1 = LuxuryHotel("Lion", 5, 14, 8, 4, 1)
+try:
+    hotel1.rate(8)
+except RatingException as e:
+    print(e)
