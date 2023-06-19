@@ -69,7 +69,6 @@ class Hotel(ABC):
         Returns:
         str:The remaining name of Hotel.
         str:The remaining name of track.
-        int:The remaining kilometer of track.
         """
     def get_attributes_by_value_type(self, value_type):
         """
